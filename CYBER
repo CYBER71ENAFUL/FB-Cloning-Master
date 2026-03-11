@@ -1,0 +1,12 @@
+# FB-Cloning-Master
+এটি আমার তৈরি একটি বিশেষ পাইথন টুল।
+
+![Banner](Phone/pixelLab/20260206_232427.jpg)
+
+## How to use / ব্যবহার করার নিয়ম:
+```bash
+apt update && apt upgrade -y
+pkg install git python -y
+git clone [https://github.com/CYBER71ENAFUL/FB-Cloning-Master](https://github.com/CYBER71ENAFUL/FB-Cloning-Master)
+cd FB-Cloning-Master
+python tool.py
