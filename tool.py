@@ -1,35 +1,60 @@
 import os
-import pyttsx3
-import datetime
-import wikipedia
+import time
 
-engine = pyttsx3.init()
+os.system("clear")
 
-def speak(text):
-    engine.say(text)
-    engine.runAndWait()
+print("\033[1;36m")
+print("================================")
+print("      CYBER 71 ENAFUL")
+print("================================")
+print("OWNER : ENAFUL")
+print("VERSION : 1.0")
+print("")
 
-print("JARVIS AI Assistant Started")
+password = input("Enter Password : ")
+
+if password != "8081":
+    print("Wrong Password")
+    exit()
+
+print("Access Granted")
+time.sleep(2)
 
 while True:
-    command = input("You : ").lower()
+    os.system("clear")
 
-    if "hello" in command:
-        speak("Hello Sir")
+    print("===== CYBER 71 ENAFUL=====")
+    print("1. System Info")
+    print("2. Loading Animation")
+    print("3. Show Time")
+    print("4. Exit")
 
-    elif "time" in command:
-        time = datetime.datetime.now().strftime("%H:%M")
-        speak("The time is " + time)
+    choice = input("Select Option : ")
 
-    elif "who is" in command:
-        name = command.replace("who is","")
-        info = wikipedia.summary(name,1)
-        print(info)
-        speak(info)
+    if choice == "1":
+        os.system("clear")
+        print("Device : Android")
+        print("User : ENAFUL")
+        input("Press Enter")
 
-    elif "exit" in command:
-        speak("Goodbye")
+    elif choice == "2":
+        os.system("clear")
+        print("Loading Tool...")
+        for i in range(10):
+            print("Processing :", i)
+            time.sleep(0.5)
+        input("Press Enter")
+
+    elif choice == "3":
+        import datetime
+        now = datetime.datetime.now()
+        print("Current Time :", now)
+        input("Press Enter")
+
+    elif choice == "4":
+        print("Exit Tool")
         break
 
     else:
-        speak("I don't understand")
+        print("Invalid Option")
+        time.sleep(1)
