@@ -1,40 +1,56 @@
 import os
 import time
 
-def banner():
-    os.system('clear')
-    print("\033[1;36m==============================")
-    print("\033[1;32m      FB CLONING MASTER       ")
-    print("\033[1;36m==============================")
+# clear screen
+os.system("clear")
 
-def main():
-    banner()
-    print("[01] File Cloning")
-    print("[02] UID Cloning")
-    print("[00] Exit")
-    
-    choice = input("\n[?] মেথড সিলেক্ট করুন: ")
-    
-    if choice == '1':
-        file = input("[?] ফাইলের পাথ দিন (যেমন: /sdcard/ids.txt): ")
-        if os.path.exists(file):
-            print(f"\n[+] {file} ফাইলটি লোড হচ্ছে...")
-            # এখানে আপনার আসল ক্লোনিং স্ক্রিপ্টের কমান্ড দিন
-            # যেমন: os.system('python clone.py ' + file)
-        else:
-            print("\n[!] এরর: ফাইলটি পাওয়া যায়নি!")
-            
-    elif choice == '2':
-        uid = input("[?] UID দিন: ")
-        print(f"\n[+] {uid} এর উপর ক্লোনিং শুরু হচ্ছে...")
-        # এখানে আপনার ক্লোনিং লজিক বসবে
-        
-    elif choice == '0':
-        exit()
+# banner
+os.system("figlet JINN TOOL | lolcat")
+
+print("OWNER : VS ENAFUL")
+print("USER  : VS ENAFUL")
+print("KEY   : JINN-KEY-8081")
+print("")
+
+# login system
+key = input("ENTER KEY : ")
+
+if key == "8081":
+    print("\nACCESS GRANTED")
+else:
+    print("\nWRONG KEY")
+    exit()
+
+time.sleep(2)
+
+# menu system
+while True:
+    os.system("clear")
+    os.system("figlet JINN TOOL | lolcat")
+
+    print("1. Start Tool")
+    print("2. Show Info")
+    print("3. Exit\n")
+
+    choice = input("Select Option : ")
+
+    if choice == "1":
+        print("\nLoading Tool...\n")
+        for i in range(10):
+            print("Processing :", i)
+            time.sleep(0.5)
+
+        input("\nPress Enter to return menu")
+
+    elif choice == "2":
+        print("\nTOTAL ACCOUNT : 99999")
+        print("METHOD : M1")
+        input("\nPress Enter to return menu")
+
+    elif choice == "3":
+        print("\nExit Tool")
+        break
+
     else:
-        print("[!] ভুল ইনপুট!")
+        print("Invalid Option")
         time.sleep(1)
-        main()
-
-if __name__ == "__main__":
-    main()
