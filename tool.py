@@ -1,57 +1,41 @@
 import os
 import time
 
-os.system("clear")
-
-print("\033[1;36m")
-print("================================")
-print("      CYBER 71 ENAFUL")
-print("================================")
-print("OWNER : ENAFUL")
-print("VERSION : 1.0")
-print("")
-
-password = input("Enter Password : ")
-
-if password != "8081":
-    print("Wrong Password")
-    exit()
-
-print("Access Granted")
-time.sleep(2)
+def banner():
+    os.system("clear")
+    print("\033[1;36m")
+    print("====================================")
+    print("        CYBER 71 ENAFUL TOOL")
+    print("====================================")
 
 while True:
-    os.system("clear")
+    banner()
 
-    print("===== CYBER 71 ENAFUL=====")
-    print("1. System Info")
-    print("2. Loading Animation")
-    print("3. Show Time")
-    print("4. Exit")
+    print("[01] Hacker Style")
+    print("[02] Matrix Style")
+    print("[03] Cyber Style")
+    print("[04] Minimal Style")
+    print("[00] Exit")
 
-    choice = input("Select Option : ")
+    choice = input("\nSelect Style : ")
 
-    if choice == "1":
-        os.system("clear")
-        print("Device : Android")
-        print("User : ENAFUL")
-        input("Press Enter")
+    if choice == "01":
+        print("Hacker Style Activated")
+        time.sleep(2)
 
-    elif choice == "2":
-        os.system("clear")
-        print("Loading Tool...")
-        for i in range(10):
-            print("Processing :", i)
-            time.sleep(0.5)
-        input("Press Enter")
+    elif choice == "02":
+        print("Matrix Style Activated")
+        time.sleep(2)
 
-    elif choice == "3":
-        import datetime
-        now = datetime.datetime.now()
-        print("Current Time :", now)
-        input("Press Enter")
+    elif choice == "03":
+        print("Cyber Style Activated")
+        time.sleep(2)
 
-    elif choice == "4":
+    elif choice == "04":
+        print("Minimal Style Activated")
+        time.sleep(2)
+
+    elif choice == "00":
         print("Exit Tool")
         break
 
