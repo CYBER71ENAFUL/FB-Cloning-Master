@@ -5,7 +5,7 @@ import time
 os.system("clear")
 
 # banner
-os.system("figlet JINN TOOL | lolcat")
+os.system("figlet VS ENAFUL | lolcat")
 
 print("OWNER : VS ENAFUL")
 print("USER  : VS ENAFUL")
