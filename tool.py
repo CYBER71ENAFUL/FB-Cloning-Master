@@ -1,52 +1,43 @@
 import os
 import time
-import sys
 
 def banner():
     os.system('clear')
     print("\033[1;36m" + " ="*25)
-    print("\033[1;31m" + "   ______     ______  ______ _____   ")
-    print("  / ___\ \   / / __ )| ____|  _  \  ")
-    print(" | |    \ \_/ /|  _  \|  _| | |_| | ")
-    print(" | |___  \   / | |_) | |___|  _  /  ")
-    print("  \____|  |_|  |____/|_____|_| \_\  ")
-    print("\033[1;32m" + "           CYBER 71 ENAFUL")
+    print("\033[1;32m" + "   FB CLONING MASTER - CYBER 71")
     print("\033[1;36m" + " ="*25)
-    print("\033[1;37m" + " OWNER   : CYBER 71 ENAFUL")
-    print(" TOOL    : FB CLONING MASTER")
-    print(" VERSION : 2.0 (STABLE)")
-    print("\033[1;36m" + " ="*25)
-    print(" Hello Enaful | My First Python Tool")
 
-def run_command(cmd):
-    print(f"\n\033[1;33m[!] কমান্ড রান হচ্ছে: {cmd}")
-    time.sleep(2)
-    os.system(cmd)
-
-def menu():
+def clone_menu():
     banner()
-    print("\033[1;32m [01] FB Cloning (Method 1)")
-    print(" [02] FB Auto Report")
-    print(" [03] Update Termux")
-    print(" [00] Exit Tool")
+    print("[01] File Cloning (File Method)")
+    print("[02] UID Cloning (UID Method)")
+    print("[00] Back")
     print("\033[1;36m" + " ="*25)
     
-    choice = input("\n\033[1;33m [?] আপনার চয়েস দিন: \033[1;37m")
+    choice = input("\n[?] আপনার মেথড সিলেক্ট করুন: ")
     
-    if choice == '01' or choice == '1':
-        # এখানে আপনার আসল ফাইলে যদি অন্য কোনো স্ক্রিপ্ট থাকে তবে সেটির নাম দিন
-        # ধরুন আপনার ক্লোনিং ফাইলের নাম 'clone.py', তাহলে লিখবেন run_command("python clone.py")
-        print("\n\033[1;32m[!] আপনার ক্লোনিং লজিক এখানে শুরু হবে...")
-        time.sleep(1)
-        
-    elif choice == '03' or choice == '3':
-        run_command("pkg update && pkg upgrade -y")
-        
-    elif choice == '00' or choice == '0':
-        print("\n\033[1;31m[!] আল্লাহ হাফেজ!")
-        sys.exit()
+    if choice == '1' or choice == '01':
+        file_path = input("\n[?] ফাইল পাথ দিন (যেমন: /sdcard/file.txt): ")
+        if os.path.exists(file_path):
+            print(f"\n[!] {file_path} থেকে ক্লোনিং শুরু হচ্ছে...")
+            # এখানে আপনার আসল ক্লোনিং লজিক বসবে
+            time.sleep(3)
+            print("[+] কাজ শেষ!")
+        else:
+            print("\n[!] এরর: ফাইলটি পাওয়া যায়নি!")
+            time.sleep(2)
+            clone_menu()
+            
+    elif choice == '2' or choice == '02':
+        uid = input("\n[?] ফেসবুক UID দিন: ")
+        print(f"\n[!] UID: {uid} এর উপর কাজ শুরু হচ্ছে...")
+        time.sleep(3)
+        print("[+] কাজ শেষ!")
+    
     else:
-        menu()
+        print("ফিরে যাওয়া হচ্ছে...")
+        time.sleep(1)
 
+# মূল মেনু
 if __name__ == "__main__":
-    menu()
+    clone_menu()
