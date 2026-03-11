@@ -1,56 +1,35 @@
 import os
-import time
+import pyttsx3
+import datetime
+import wikipedia
 
-# clear screen
-os.system("clear")
+engine = pyttsx3.init()
 
-# banner
-os.system("figlet VS ENAFUL | lolcat")
+def speak(text):
+    engine.say(text)
+    engine.runAndWait()
 
-print("OWNER : VS ENAFUL")
-print("USER  : VS ENAFUL")
-print("KEY   : JINN-KEY-8081")
-print("")
+print("JARVIS AI Assistant Started")
 
-# login system
-key = input("ENTER KEY : ")
-
-if key == "8081":
-    print("\nACCESS GRANTED")
-else:
-    print("\nWRONG KEY")
-    exit()
-
-time.sleep(2)
-
-# menu system
 while True:
-    os.system("clear")
-    os.system("figlet JINN TOOL | lolcat")
+    command = input("You : ").lower()
 
-    print("1. Start Tool")
-    print("2. Show Info")
-    print("3. Exit\n")
+    if "hello" in command:
+        speak("Hello Sir")
 
-    choice = input("Select Option : ")
+    elif "time" in command:
+        time = datetime.datetime.now().strftime("%H:%M")
+        speak("The time is " + time)
 
-    if choice == "1":
-        print("\nLoading Tool...\n")
-        for i in range(10):
-            print("Processing :", i)
-            time.sleep(0.5)
+    elif "who is" in command:
+        name = command.replace("who is","")
+        info = wikipedia.summary(name,1)
+        print(info)
+        speak(info)
 
-        input("\nPress Enter to return menu")
-
-    elif choice == "2":
-        print("\nTOTAL ACCOUNT : 99999")
-        print("METHOD : M1")
-        input("\nPress Enter to return menu")
-
-    elif choice == "3":
-        print("\nExit Tool")
+    elif "exit" in command:
+        speak("Goodbye")
         break
 
     else:
-        print("Invalid Option")
-        time.sleep(1)
+        speak("I don't understand")
